@@ -91,10 +91,12 @@ pipeline {
                     cd frontend
 
                     docker run --rm \
-                        -v "$PWD:/app" \
-                        -w /app \
-                        node:18-alpine \
-                        sh -c "npm install && npm run build"
+  --user "$(id -u):$(id -g)" \
+  -e HOME=/tmp \
+  -v "$PWD:/app" \
+  -w /app \
+  node:18-alpine \
+  sh -c "npm install && npm run build"
 
                     test -d dist
                     echo "Frontend build successful."
