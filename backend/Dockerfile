@@ -17,4 +17,4 @@ USER nonroot:nonroot
 
 EXPOSE 8080
 
-ENTRYPOINT ["/intentionally-missing-shopverse-api"]
+ENTRYPOINT ["/shopverse-api"]
