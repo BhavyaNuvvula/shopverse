@@ -505,12 +505,5 @@ pipeline {
             }
         }
 
-        always {
-            sh '''
-                rm -f "${STATE_DIR}/previous_tag_${BUILD_NUMBER}" || true
-            '''
-
-            echo 'Pipeline execution finished.'
-        }
     }
 }
